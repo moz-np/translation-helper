@@ -4,7 +4,7 @@
   header("Access-Control-Allow-Origin: *");
 
   /* Set UTF-8 Encoding */
-  header('Content-Type: text/html; charset=utf-8');
+  header('Content-Type: text/plain; charset=utf-8');
 
   /* Require Config */
   require_once 'config.php';
