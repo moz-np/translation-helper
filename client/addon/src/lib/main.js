@@ -1,7 +1,7 @@
 var pageMod = require("sdk/page-mod"),
-  self = require("sdk/self");
+  data = require("sdk/self").data;
 
 pageMod.PageMod({
   include: "mozilla.locamotion.org",
-  contentScriptFile: self.data.url("client-script.js");
+  contentScriptFile: data.url("client-script.js")
 });
