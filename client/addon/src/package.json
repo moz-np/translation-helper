@@ -1,0 +1,13 @@
+{
+  "title": "Mozilla Nepal Pootle Translation Helper",
+  "name": "moznp-pootle-translation-helper",
+  "version": "0.0.1",
+  "description": "An addon that will help while localizing strings in Pootle.",
+  "main": "lib/main.js",
+  "author": "Nootan Ghimire",
+  "engines": {
+    "firefox": ">=38.0a1",
+    "fennec": ">=38.0a1"
+  },
+  "license": "MPL"
+}
