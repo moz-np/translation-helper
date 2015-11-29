@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "description": "An addon that will help while localizing strings in Pootle.",
   "main": "lib/main.js",
-  "author": "Nootan Ghimire",
+  "author": "Nootan Ghimire, Nishchal Gautam",
   "engines": {
     "firefox": ">=38.0a1",
     "fennec": ">=38.0a1"
