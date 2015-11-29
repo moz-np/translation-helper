@@ -1,1 +1,3 @@
-alert('Attached');
+//Javascript Document
+
+console.log("Log this!");
