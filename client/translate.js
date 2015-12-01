@@ -7,7 +7,8 @@ var url="<your_server_url>?string=";
 var text_from=".translation-text.js-translation-text";
 
 document.onclick = function  (element) {
-	if (element.srcElement.id == textarea_id) {
+	var target = element.target || element.srcElement ;
+	if (target.id == textarea_id) {
 		var text = document.querySelector(text_from).innerText;
 		var xhttp = new XMLHttpRequest();
 		xhttp.onreadystatechange = function() {
