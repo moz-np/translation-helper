@@ -36,17 +36,23 @@
 
   //echo substr($contents, 4, strpos(substr($contents, 4), '"')); //OBSOLETE
 
+  //$re = "/([\"'])(?:(?=(\\\\?))\\2.)*?\\1/";
+
   /* Set Regular Expression */
-  /* Thanks to: http://stackoverflow.com/a/171499/1306046 */
+  /* Thanks to: OnlineCop @ #regex on irc.freenode.org */
+  /* Find him on twitter: @OnlineCop */
   /* Also, Thanks to: http://regex101.com */
-  $re = "/([\"'])(?:(?=(\\\\?))\\2.)*?\\1/";
+
+  $re = "/(?J)\"(?P<string>(?:\\\\.|[^\\\\\"]+)*)\"|'(?P<string>(?:\\\\.|[^\\\\']+)*)'/";
+
+  //$re = "/(?J:(?<=\")(?P<string>(?:[^\\\\\"]++|\\\\.)*+)(?=\")|(?<=')(?P<string>(?:[^\\\\']++|\\\\.)*+)(?='))/";
 
   if(preg_match_all($re, $contents, $matches) != false) {
     $matches = $matches[0];
 
     /* Last one is source lang, omit that */
     for ($i=0; $i < count($matches) - 1; $i = $i + 2) {
-      echo $matches[$i] . " ";
+      echo trim($matches[$i], '"');
     }
 
   } else {
