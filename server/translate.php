@@ -30,6 +30,26 @@
    * If someone has a better and optimized version, please send a
    * pull request!
    *
+   *
+   * UPDATE: Used regex and for loops to cover large areas.
    */
-  echo substr($contents, 4, strpos(substr($contents, 4), '"'));
+
+  //echo substr($contents, 4, strpos(substr($contents, 4), '"')); //OBSOLETE
+
+  /* Set Regular Expression */
+  /* Thanks to: http://stackoverflow.com/a/171499/1306046 */
+  /* Also, Thanks to: http://regex101.com */
+  $re = "/([\"'])(?:(?=(\\\\?))\\2.)*?\\1/";
+
+  if(preg_match_all($re, $contents, $matches) != false) {
+    $matches = $matches[0];
+
+    /* Last one is source lang, omit that */
+    for ($i=0; $i < count($matches) - 1; $i = $i + 2) {
+      echo $matches[$i] . " ";
+    }
+
+  } else {
+    echo "म्याच भेटिएन ।"; //Convert this to custom error code;
+  }
 ?>
