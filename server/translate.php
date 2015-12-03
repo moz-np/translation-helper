@@ -48,11 +48,12 @@
   //$re = "/(?J:(?<=\")(?P<string>(?:[^\\\\\"]++|\\\\.)*+)(?=\")|(?<=')(?P<string>(?:[^\\\\']++|\\\\.)*+)(?='))/";
 
   if(preg_match_all($re, $contents, $matches) != false) {
-    $matches = $matches[0];
+
+    $matches = $matches[1];
 
     /* Last one is source lang, omit that */
     for ($i=0; $i < count($matches) - 1; $i = $i + 2) {
-      echo trim($matches[$i], '"');
+      echo $matches[$i];
     }
 
   } else {
