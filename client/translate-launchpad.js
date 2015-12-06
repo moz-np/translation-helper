@@ -6,7 +6,7 @@
  * @thanks  Mozilla Nepal (for server)
  */
 
-var url = "https://mozilla-nepal.org/translation-helper-pootle/translate.php?string=";
+var url = "<your_https_server_url>?string=";
 
 document.onclick = function  (e) {
 
