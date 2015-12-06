@@ -18,8 +18,8 @@ document.onclick = function  (e) {
 		var xhttp = new XMLHttpRequest();
 		xhttp.onreadystatechange = function() {
 			if (xhttp.readyState == 4 && xhttp.status == 200) {
-				if (document.querySelector("#"+textarea_id).value==""){
-					document.querySelector("#"+textarea_id).value=xhttp.responseText;
+				if (elem.value == ""){
+					elem.value = xhttp.responseText;
 				}
 			}
 		};
