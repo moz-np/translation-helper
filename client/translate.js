@@ -23,7 +23,7 @@ document.onclick = function  (e) {
 				}
 			}
 		};
-		text = text.replace("&", "");
+		text = text.replace(/&/g, "");
 		xhttp.open("GET", url+text, true);
 		console.log(url+text);
 		xhttp.send();
