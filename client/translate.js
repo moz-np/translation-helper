@@ -4,7 +4,8 @@ Dirty hack (for now), iterating
 
 var textarea_id="id_target_f_0"; //current_textarea_target
 var url="<your_server_url>?string=";
-var text_from=".translation-text.js-translation-text";
+//var text_from=".translation-text.js-translation-text";
+var text_from=".translation-text";
 
 document.onclick = function  (e) {
 
@@ -19,11 +20,12 @@ document.onclick = function  (e) {
 		xhttp.onreadystatechange = function() {
 			if (xhttp.readyState == 4 && xhttp.status == 200) {
 				if (elem.value == ""){
-					elem.value = xhttp.responseText;
+					elem.value = xhttp.responseText.replace(/\u003c/g, '<').replace(/\u003e/g, '>');
 				}
 			}
 		};
 		text = text.replace(/&/g, "");
+		text = text.replace(/#/g, "");
 		xhttp.open("GET", url+text, true);
 		console.log(url+text);
 		xhttp.send();

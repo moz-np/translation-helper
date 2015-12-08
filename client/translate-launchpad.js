@@ -30,8 +30,8 @@ document.onclick = function  (e) {
       }
     }
 
-    //text = text.replace(/&/g, "");
-
+    strUntranslated = strUntranslated.replace(/&/g, "").replace(/#/g, "");
+    
     xhttp.open("GET", url+strUntranslated, true);
     console.log(url+strUntranslated);
     xhttp.send();
